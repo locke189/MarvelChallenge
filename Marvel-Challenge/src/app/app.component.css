@@ -1,0 +1,17 @@
+.left-column{
+  width: 80%;
+  float: left;
+  background: white;
+
+}
+.right-column{
+  width: 20%;
+  float: right;
+  background: #f0f0f0;
+}
+
+.modal-body{
+    padding: 0px;
+    margin: 1px;
+
+}
