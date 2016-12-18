@@ -23,6 +23,7 @@ module.exports = function (config) {
         lcovonly: './coverage/coverage.lcov'
       }
     },
+    mime: { 'text/x-typescript': ['ts','tsx'] },
     angularCli: {
       config: './angular-cli.json',
       environment: 'dev'
