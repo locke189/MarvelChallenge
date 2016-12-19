@@ -10,6 +10,7 @@ import { HeroListComponent } from './hero-list/hero-list.component';
 import { FavListComponent } from './fav-list/fav-list.component';
 import { ComicDetailComponent } from './comic-detail/comic-detail.component';
 import { CharacterComponent } from './hero-list/character/character.component';
+import { ComicComponent } from './fav-list/comic/comic.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CharacterComponent } from './hero-list/character/character.component';
     HeroListComponent,
     FavListComponent,
     ComicDetailComponent,
-    CharacterComponent
+    CharacterComponent,
+    ComicComponent
   ],
   imports: [
     BrowserModule,

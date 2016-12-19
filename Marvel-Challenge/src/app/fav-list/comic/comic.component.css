@@ -1,0 +1,9 @@
+.img-resize{
+  width:200px; /* you can use % */
+  height: auto;
+}
+
+.center-div{
+  text-align:center;
+}
+
