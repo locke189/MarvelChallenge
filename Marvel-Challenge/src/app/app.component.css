@@ -8,9 +8,22 @@
   width: 30%;
   float: right;
   background: #f0f0f0;
+  height: 100%;
+}
+
+.containerX{
+    padding: 0px;
+    width: 100%;
 }
 
 .container{
     padding: 0px;
     width: 100%;
+    position: relative;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow:hidden;
+    background: #f0f0f0;
 }

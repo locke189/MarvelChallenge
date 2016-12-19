@@ -1,0 +1,22 @@
+.char-list-header{
+  padding: 10px;
+}
+
+.sort-dropdown{
+  float: right;
+}
+.char-list-footer{
+    text-align: center;
+    padding: 0px;
+    width: 100%;
+}
+
+
+.char-list-footer ul {
+    display: inline-block;
+    text-align: initial;
+}
+
+.char-list-body{
+    padding-right: 50px;
+}

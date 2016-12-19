@@ -1,3 +1,50 @@
-<p>
-  hero-list works!
-</p>
+<div class="row char-list-header">
+  <p class="col-xs-5"><img src="/assets/icons/characters.png">
+  <span>Characters</span>
+  </p>
+
+  <div class="btn-group col-xs-7 ">
+    <button type="button" class="btn btn-default dropdown-toggle sort-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Sort by <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Filter 1</a></li>
+      <li><a href="#">Filter 2</a></li>
+      <li><a href="#">Filter 3</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="row char-list-body">
+  <app-character></app-character>
+  <app-character></app-character>
+  <app-character></app-character>
+  <app-character></app-character>
+  <app-character></app-character>
+  <app-character></app-character>
+  <app-character></app-character>
+  <app-character></app-character>
+  <app-character></app-character>
+  <app-character></app-character>
+</div>
+
+<div class="container char-list-footer">
+    <ul class="pagination">
+    <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+      </a>
+      </li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+</div>

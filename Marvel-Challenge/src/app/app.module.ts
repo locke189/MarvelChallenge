@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { FavListComponent } from './fav-list/fav-list.component';
 import { ComicDetailComponent } from './comic-detail/comic-detail.component';
+import { CharacterComponent } from './hero-list/character/character.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ComicDetailComponent } from './comic-detail/comic-detail.component';
     FooterComponent,
     HeroListComponent,
     FavListComponent,
-    ComicDetailComponent
+    ComicDetailComponent,
+    CharacterComponent
   ],
   imports: [
     BrowserModule,
