@@ -18,16 +18,4 @@ export class HttpService {
     return this.http.get(url, {search: params});
   }
 
-  getInitialData(){
-    const url = "https://gateway.marvel.com//v1/public/characters";
-    let params = new URLSearchParams();
-    params.set('hash', 'effdd68f568a43ae712240c3ce880e86');
-    params.set('apikey', '6e8fd6170783e1ecf8c0e3784c8c00f2');
-    params.set('ts', '1');
-    params.set('limit', '10');
-    params.set('series','16452' )
-    return this.http.get(url, {search: params});
-  }
-
-
 }

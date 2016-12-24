@@ -9,9 +9,9 @@ export class ModelService {
 
   constructor() { }
 
-  addCharacter(char:Character){
+  addCharacters(json:any){
     //TODO if character already in list don't add it
-    this.characters.push(char);
+
   }
 
   getCharacter(search:string){
