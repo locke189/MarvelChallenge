@@ -8,25 +8,16 @@
       Sort by <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#">Filter 1</a></li>
-      <li><a href="#">Filter 2</a></li>
-      <li><a href="#">Filter 3</a></li>
+      <li><a href="#">Modified</a></li>
+      <li><a href="#">Name</a></li>
     </ul>
   </div>
 
 </div>
 
 <div class="row char-list-body">
-  <app-character></app-character>
-  <app-character></app-character>
-  <app-character></app-character>
-  <app-character></app-character>
-  <app-character></app-character>
-  <app-character></app-character>
-  <app-character></app-character>
-  <app-character></app-character>
-  <app-character></app-character>
-  <app-character></app-character>
+  <app-character *ngFor="let character of characters" [char]="character" ></app-character>
+
 </div>
 
 <div class="container char-list-footer">

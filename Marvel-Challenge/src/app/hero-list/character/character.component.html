@@ -5,13 +5,11 @@
           <img class="col-xs-6" src={{char.thumbnail}}>
           <h4>{{char.name}}</h4>
           <p>{{char.description}}</p>
+          <button class="btn">VIEW MORE</button>
       <div>
       <h4>Related Comics</h4>
       <div class="row">
-          <p class="col-xs-6">{{char.comics[0]}</p>
-          <p class="col-xs-6">{{char.comics[1]}</p>
-          <p class="col-xs-6">{{char.comics[2]}</p>
-          <p class="col-xs-6">{{char.comics[3]}</p>
+          <p class="col-xs-6" *ngFor="let comic of char.comicList" >{{comic.name}}</p>
       </div>
     </div>
   </div>
