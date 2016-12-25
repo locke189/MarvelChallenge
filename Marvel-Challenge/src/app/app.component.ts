@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+
+  keyword : string;
+
+  onSearch(term:string){
+    console.log(`Searching... ${term}`);
+    this.keyword = term;
+  }
+
 }

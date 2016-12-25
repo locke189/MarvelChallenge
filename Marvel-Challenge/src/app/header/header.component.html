@@ -9,7 +9,7 @@
 
     <form class="navbar-form navbar-nav">
       <div class="form-group">
-        <input type="text" class="form-control" id="search" placeholder="Search"/>
+        <input type="text" #term class="form-control" id="search" placeholder="Search" (keyup)="search(term.value)"/>
       </div>
     </form>
 

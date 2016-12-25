@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Response }          from '@angular/http';
 
 import { Observable }        from 'rxjs/Observable';
@@ -13,20 +13,46 @@ import { Character } from '../character';
   styleUrls: ['./hero-list.component.css'],
   providers: [HttpService]
 })
-export class HeroListComponent implements OnInit {
+export class HeroListComponent implements OnInit, OnChanges {
+
+  @Input() keyword: string;
 
   characters: Character[];
+  page: number;
+  pages: number;
 
   constructor(private httpService: HttpService) {}
 
   ngOnInit() {
+      console.log('onInit');
       this.httpService.getData( 'Iron', 'modified' ).subscribe(
         ( data: Response ) => {
+
+          this.characters = data.json().data.results.map( (object) => {
+            const char: Character = new Character(object);
+
+            return char;
+          });
+        }
+      );
+  }
+
+
+  ngOnChanges(){
+    if(this.keyword){
+      console.log('HTTP Request...');
+      this.httpService.getData( this.keyword, 'modified' ).subscribe(
+        ( data: Response ) => {
+
           this.characters = data.json().data.results.map( (object) => {
             const char: Character = new Character(object);
             return char;
           });
         }
       );
+
+    }
   }
+
+
 }
