@@ -1,15 +1,22 @@
-<div class="col-xs-6">
+<div class="col-xs-12 col-md-6">
   <div class="panel panel-default">
     <div class="panel-body">
       <div class="row">
-          <img class="col-xs-6" src={{char.thumbnail}}>
-          <h4>{{char.name}}</h4>
-          <p>{{char.description}}</p>
-          <button class="btn">VIEW MORE</button>
-      <div>
+          <div class="col-xs-6">
+            <img src={{char.thumbnail}}>
+          </div>
+          <div class="col-xs-6">
+            <h4>{{char.name | uppercase}} </h4>
+            <p>{{char.description | slice:1:160}}...</p>
+            <button class="btn">VIEW MORE</button>
+          </div>
+      </div>
+
       <h4>Related Comics</h4>
       <div class="row">
-          <p class="col-xs-6" *ngFor="let comic of char.comicList" >{{comic.name}}</p>
+        <div class="col-xs-6" *ngFor="let comic of char.comicList">
+          <p>{{comic.name}}</p>
+        </div>
       </div>
     </div>
   </div>

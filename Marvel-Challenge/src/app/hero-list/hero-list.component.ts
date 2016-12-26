@@ -21,12 +21,14 @@ export class HeroListComponent implements OnInit, OnChanges {
   page: number = 1;
   pages: number;
   pagerList: string[];
+  sortBy: string = 'Sort by  ';
+  sortByValue: string = 'name';
 
   constructor(private httpService: HttpService) {}
 
   ngOnInit() {
       console.log('onInit');
-      this.httpService.getData( this.keyword , 'modified', (10*(this.page-1)) ).subscribe(
+      this.httpService.getData( this.keyword , this.sortByValue, (10*(this.page-1)) ).subscribe(
         ( data: Response ) => {
           this.setPages(data.json().data.total);
           this.characters = data.json().data.results.map( (object) => {
@@ -41,7 +43,8 @@ export class HeroListComponent implements OnInit, OnChanges {
 
   ngOnChanges(){
       console.log('HTTP Request...');
-      this.httpService.getData( this.keyword, 'modified', (10*(this.page-1)) ).subscribe(
+      this.page = 1;
+      this.httpService.getData( this.keyword, this.sortByValue, (10*(this.page-1)) ).subscribe(
         ( data: Response ) => {
           this.setPages(data.json().data.total);
           this.characters = data.json().data.results.map( (object) => {
@@ -85,7 +88,7 @@ export class HeroListComponent implements OnInit, OnChanges {
     if(page === ' ...') this.page = this.pages;
 
     console.log(`HTTP Request for page: ${page}`);
-    this.httpService.getData( this.keyword, 'modified', (10*(this.page-1)) ).subscribe(
+    this.httpService.getData( this.keyword, this.sortByValue, (10*(this.page-1)) ).subscribe(
       ( data: Response ) => {
         this.characters = data.json().data.results.map( (object) => {
           const char: Character = new Character(object);
@@ -95,6 +98,18 @@ export class HeroListComponent implements OnInit, OnChanges {
     );
     this.setPagerList();
   }
+
+  orderBy(field:string){
+    console.log('order by')
+    if(field === this.sortByValue) return;
+    this.sortByValue = field;
+    if(field==='name') this.sortBy = 'Name';
+    if(field==='modified') this.sortBy = 'Modified';
+    this.ngOnChanges();
+  }
+
+
+
 
 
 }

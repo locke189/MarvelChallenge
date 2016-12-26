@@ -1,19 +1,18 @@
 <div class="row char-list-header">
   <p class="col-xs-5"><img src="/assets/icons/characters.png">
   <span>Characters</span>
-  <span>{{keyword}}</span>
   </p>
-
-  <div class="btn-group col-xs-7 ">
-    <button type="button" class="btn btn-default dropdown-toggle sort-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Sort by <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Modified</a></li>
-      <li><a href="#">Name</a></li>
-    </ul>
+  <div class="col-xs-7">
+    <div class="btn-group pull-right">
+      <button type="button" class="btn btn-default dropdown-toggle sort-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{sortBy}} <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#" (click)="orderBy('modified')">Modified</a></li>
+        <li><a href="#" (click)="orderBy('name')">Name</a></li>
+      </ul>
+    </div>
   </div>
-
 </div>
 
 <div class="row char-list-body">
