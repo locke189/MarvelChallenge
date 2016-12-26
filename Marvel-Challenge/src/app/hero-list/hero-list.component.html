@@ -24,13 +24,13 @@
 <div class="container char-list-footer">
     <ul class="pagination">
     <li>
-        <a href="#" aria-label="Previous">
+        <a href="#" (click)="setPage(page-1)" aria-label="Previous">
           <span aria-hidden="true">&laquo;</span>
       </a>
       </li>
-      <li *ngFor="let pager of pagerList"><a href="#">{{pager}}</a></li>
+      <li *ngFor="let pager of pagerList"><a href="#" (click)="setPage(pager)">{{pager}}</a></li>
       <li>
-        <a href="#" aria-label="Next">
+        <a href="#" aria-label="Next" (click)="setPage(page+1)">
           <span aria-hidden="true">&raquo;</span>
         </a>
       </li>

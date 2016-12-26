@@ -18,7 +18,7 @@ export class HeroListComponent implements OnInit, OnChanges {
   @Input() keyword: string;
 
   characters: Character[];
-  page: number;
+  page: number = 1;
   pages: number;
   pagerList: string[];
 
@@ -26,7 +26,7 @@ export class HeroListComponent implements OnInit, OnChanges {
 
   ngOnInit() {
       console.log('onInit');
-      this.httpService.getData( this.keyword , 'modified' ).subscribe(
+      this.httpService.getData( this.keyword , 'modified', (10*(this.page-1)) ).subscribe(
         ( data: Response ) => {
           this.setPages(data.json().data.total);
           this.characters = data.json().data.results.map( (object) => {
@@ -41,7 +41,7 @@ export class HeroListComponent implements OnInit, OnChanges {
 
   ngOnChanges(){
       console.log('HTTP Request...');
-      this.httpService.getData( this.keyword, 'modified' ).subscribe(
+      this.httpService.getData( this.keyword, 'modified', (10*(this.page-1)) ).subscribe(
         ( data: Response ) => {
           this.setPages(data.json().data.total);
           this.characters = data.json().data.results.map( (object) => {
@@ -53,7 +53,7 @@ export class HeroListComponent implements OnInit, OnChanges {
   }
 
   setPages(total){
-    this.pages = Math.floor(total/10);
+    this.pages = Math.ceil(total/10);
     this.page = 1;
     this.setPagerList();
 
@@ -67,14 +67,34 @@ export class HeroListComponent implements OnInit, OnChanges {
 
     if(start < 1 ) start = 1;
     if( end > (start + 4) ) end = start + 4;
-    if(start > 1 ) this.pagerList.push('...');
+    if(start > 1 ) this.pagerList.push('... ');
 
     for(let i = start; i <= end; i++ ){
       this.pagerList.push(String(i));
     }
 
-    if(end < this.pages) this.pagerList.push('...');
+    if(end < this.pages) this.pagerList.push(' ...');
 
   }
+
+  setPage(page){
+    if(page < 1 || page > this.pages) return;
+    this.page = page;
+
+    if(page === '... ') this.page = 1;
+    if(page === ' ...') this.page = this.pages;
+
+    console.log(`HTTP Request for page: ${page}`);
+    this.httpService.getData( this.keyword, 'modified', (10*(this.page-1)) ).subscribe(
+      ( data: Response ) => {
+        this.characters = data.json().data.results.map( (object) => {
+          const char: Character = new Character(object);
+          return char;
+        });
+      }
+    );
+    this.setPagerList();
+  }
+
 
 }
