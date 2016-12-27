@@ -1,21 +1,55 @@
 .panel{
     margin: 5px 20px 5px 20px;
-    width: 100%;
+    width: 95%;
     height: auto;
 }
 
 .panel-body > .row > .col-xs-6 > img{
   border-radius: 50%;
-  width:100%; /* you can use % */
+  width:95%; /* you can use % */
   height: auto;
+  position: absolute;
+  left: -20px;
+  top: -30px;
+
 }
 
-.panel-body > .row > p{
- font-size: 10em;
+.char-panel{
+  margin-top: 20px;
 }
 
-p {
-  padding-left:10px;
-  padding-right:10px;
+.char-title{
+  font-size: 1.2em;
 }
+
+.char-description{
+  font-size: 0.8em;
+  padding-right: 15px;
+
+}
+
+.char-comics{
+  font-size: 0.8em;
+  margin-top: 2px;
+  height: 100%;
+}
+
+
+.img-container{
+  margin-bottom:45%;
+}
+
+.comics-container{
+  margin-bottom:1%;
+}
+
+.comics-detail{
+  position: relative;
+}
+.text-container{
+  position: absolute;
+  top: -35px;
+  left: -5px;
+}
+
 

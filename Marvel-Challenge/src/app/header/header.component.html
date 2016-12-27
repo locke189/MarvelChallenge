@@ -7,11 +7,13 @@
       </a>
     </div>
 
-    <form class="navbar-form navbar-nav">
-      <div class="form-group">
-        <input type="text" #term class="form-control" id="search" placeholder="Search" (keyup)="search(term.value)"/>
-      </div>
-    </form>
+      <form class="navbar-form">
+        <div class="form-group" style="display:inline;">
+        <div class="input-group search-container" style="display:table;">
+          <input type="text" #term class="form-control search-box" id="search" placeholder="Search" (keyup)="search(term.value)"/>
+        </div>
+        </div>
+      </form>
 
   </div><!-- /.container-fluid -->
 </nav>
