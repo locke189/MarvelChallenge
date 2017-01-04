@@ -1,12 +1,12 @@
 <app-header (searchTerm)="onSearch($event)">...Loading</app-header>
-
-<div class="row">
-  <div class="col-xs-12 col-sm-9 left-column">
-    <app-hero-list [keyword]="keyword"></app-hero-list>
-  </div>
-  <div class="col-sm-3 hidden-xs right-column" >
-    <app-fav-list></app-fav-list>
+<div class="container main">
+  <div class="row">
+    <div class="col-xs-12 col-sm-9 left-column">
+      <app-hero-list [keyword]="keyword"></app-hero-list>
+    </div>
+    <div class="col-sm-3 hidden-xs right-column" >
+      <app-fav-list></app-fav-list>
+    </div>
   </div>
 </div>
-
 <app-footer>...Loading</app-footer>

@@ -7,7 +7,15 @@
 
 }
 
-
 .row{
   background: rgb(235,235,235);
+}
+
+body{
+  background-color: #f4f4f4;
+  color: #473f3d;
+}
+
+.main{
+  width: 100%;
 }
