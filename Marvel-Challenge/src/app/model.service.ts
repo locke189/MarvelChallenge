@@ -1,32 +1,43 @@
 import { Injectable } from '@angular/core';
 import { Character } from './character'
-
+import { Comic } from './comic'
 
 @Injectable()
 export class ModelService {
 
-  characters : Character[];
+  favouriteComics : Comic[];
 
   constructor() { }
 
-  addCharacters(json:any){
-    //TODO if character already in list don't add it
-
+  addComic(comic:Comic){
+    const existingComic = this.checkComicInListbyId(comic.id);
+    if(!existingComic){
+      this.favouriteComics.push(comic);
+      return true;
+    }
+    return false
   }
 
-  getCharacter(search:string){
-    //TODO get a list of characters based on the search string
-    //TODO if there is no local data, go and fetch from the API
-    return this.characters[0];
+  checkComicInListbyId(id:string){
+    if(this.favouriteComics){
+      return this.favouriteComics.find((element) => {
+        return element.id === id;
+      });
+    }
   }
 
-  searchCharacter(search:string){
-    //TODO sends a http request searching for a character
-    //TODO adds the new heroes to the character list
+  erraseComicFromListbyId(id:string){
+    const comic = this.checkComicInListbyId(id);
+    const index = this.favouriteComics.indexOf(comic);
+    if(index != -1) {
+      this.favouriteComics.splice(index, 1);
+      return true;
+    }
+    return false;
   }
 
-  getInitialList(){
-
+  getFavourites(){
+    return this.favouriteComics;
   }
 
 }
