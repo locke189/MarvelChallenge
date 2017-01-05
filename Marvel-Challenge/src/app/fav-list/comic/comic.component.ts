@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Comic } from '../../comic';
 
 @Component({
   selector: 'app-comic',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./comic.component.css']
 })
 export class ComicComponent implements OnInit {
-
+  @Input() comic: Comic;
   constructor() { }
 
   ngOnInit() {

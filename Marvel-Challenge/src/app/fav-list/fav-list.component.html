@@ -5,9 +5,6 @@
   </p>
 </div>
 
-<div class="row fav-list-body">
-  <app-comic></app-comic>
-  <app-comic></app-comic>
-  <app-comic></app-comic>
-  <app-comic></app-comic>
+<div class="row fav-list-body" >
+  <app-comic *ngFor="let comic of favouriteComics" [comic]="comic"></app-comic>
 </div>
