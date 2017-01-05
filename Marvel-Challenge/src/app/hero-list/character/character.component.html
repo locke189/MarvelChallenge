@@ -8,7 +8,7 @@
 
               <h1 class="h5 char-title">{{char.name | uppercase}} </h1>
               <p class="char-description">{{char.description | slice:0:160}}...</p>
-              <button class="btn btn-primary" >VIEW MORE</button>
+              <button class="btn btn-primary" data-toggle="modal" [attr.data-target]="'#' + char.id" >VIEW MORE</button>
 
           </div>
 

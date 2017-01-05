@@ -11,6 +11,7 @@ import { FavListComponent } from './fav-list/fav-list.component';
 import { ComicDetailComponent } from './comic-detail/comic-detail.component';
 import { CharacterComponent } from './hero-list/character/character.component';
 import { ComicComponent } from './fav-list/comic/comic.component';
+import { HeroDetailComponent } from './hero-list/hero-detail/hero-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ComicComponent } from './fav-list/comic/comic.component';
     FavListComponent,
     ComicDetailComponent,
     CharacterComponent,
-    ComicComponent
+    ComicComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,

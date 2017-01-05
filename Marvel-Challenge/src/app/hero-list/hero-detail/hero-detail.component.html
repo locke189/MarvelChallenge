@@ -1,0 +1,25 @@
+
+<div class="modal fade" [id]="char.id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{char.name | uppercase}}</h4>
+      </div>
+      <div class="modal-body pre-scrollable">
+        <p>{{char.description}}</p>
+        <h1 class="h5"> Related Comics</h1>
+        <ul class="related-comics" >
+          <li *ngFor="let comic of char.allComics">
+            <div class="related-comic"><a href="#" class="char-comics">{{comic.name | slice:0:50}}</a> </div>
+          </li>
+        </ul>
+
+      </div>
+      <div class="modal-footer ">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add Random Comics</button>
+      </div>
+    </div>
+  </div>
+</div>
