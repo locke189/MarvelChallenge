@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Character } from './character'
 import { Comic } from './comic'
 
 @Injectable()
