@@ -10,8 +10,8 @@ export class Character {
     this.name = object.name;
     this.id = object.id;
     this.thumbnail = `${object.thumbnail.path}.${object.thumbnail.extension}`;
-    this.allComics = object.comics.items;
     this.description = object.description;
+    this.allComics = object.comics.items;
     this.comicList = this.getRandomComicList(4);
   }
 
