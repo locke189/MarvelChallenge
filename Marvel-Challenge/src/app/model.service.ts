@@ -25,7 +25,7 @@ export class ModelService {
     }
   }
 
-  erraseComicFromListbyId(id:string){
+  eraseComicFromListbyId(id:string){
     const comic = this.checkComicInListbyId(id);
     const index = this.favouriteComics.indexOf(comic);
     if(index != -1) {

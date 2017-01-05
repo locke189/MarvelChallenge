@@ -33,7 +33,6 @@ export class HeroListComponent implements OnInit, OnChanges {
           this.setPages(data.json().data.total);
           this.characters = data.json().data.results.map( (object) => {
             const char: Character = new Character(object);
-
             return char;
           });
         }
