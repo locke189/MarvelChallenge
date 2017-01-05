@@ -6,3 +6,23 @@ html{
 body{
     height:100%; /* force the BODY element to match the height of the HTML element */
 }
+
+/* Overrides */
+
+.btn {
+  border-radius: 0;
+  border: none;
+  text-transform: uppercase;
+}
+
+.btn.btn-primary {
+  background: #ec1e23;
+  color: #fff;
+  font-size: 0.8em;
+}
+
+.btn.btn-primary:active {
+  background: #fff;
+  border: 1px solid #ec1e23;
+  color: #ec1e23;
+}
