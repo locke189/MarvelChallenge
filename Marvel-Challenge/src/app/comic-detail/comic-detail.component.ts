@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Comic } from '../comic';
 import { ModelService } from '../model.service';
 import { HttpService } from '../http.service';
+import { ComicModalService } from '../comic-modal.service';
 import { Response }          from '@angular/http';
 import { Observable }        from 'rxjs/Observable';
 import { Subject }           from 'rxjs/Subject';
@@ -13,26 +14,40 @@ import { Subject }           from 'rxjs/Subject';
   providers: [ModelService, HttpService]
 })
 export class ComicDetailComponent implements OnInit {
-  comic: Comic;
+  @Input() comic: Comic;
 
-  constructor(private modelService: ModelService, private httpService: HttpService) { }
+  constructor(private modelService: ModelService, private httpService: HttpService, private comicModalService: ComicModalService) {
+        this.comicModalService.comicUrl$.subscribe(
+      url  => {
+        console.log(`new url! ${url}`)
+        this.getComicByUrl(url);
+        this.openModal();
+      },
+      err => {
+        console.log(err);
+      });
+  }
 
   ngOnInit() {
+
   }
 
   getComicByUrl(url:string){
     console.log('Comic Request');
     this.httpService.getComicDataFromUrl(url).subscribe(
       ( data: Response ) => {
-        this.comic = data.json().data.results.map( (object) => {
+        const comics = data.json().data.results.map( (object) => {
           const comic: Comic = new Comic(object);
           return comic;
         });
+        this.comic = comics[0];
+        console.log(this.comic.title);
     });
   }
 
-  toggleModal(){
-    $('#ComicModal').modal('toggle');
+  openModal(){
+    console.log('opening modal');
+    document.getElementById("openModalButton").click();
   }
 
 }
