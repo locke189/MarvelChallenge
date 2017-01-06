@@ -20,7 +20,7 @@
               <ul class="related-comics" >
                 <li *ngFor="let comic of char.comicList">
                   <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                  <div class="related-comic"><a href="#" class="char-comics">{{comic.name | slice:0:50}}</a> </div>
+                  <div class="related-comic"><a href="#" (click)="clickOnComic(comic.resourceURI)" class="char-comics">{{comic.name | slice:0:50}}</a> </div>
                 </li>
               </ul>
 

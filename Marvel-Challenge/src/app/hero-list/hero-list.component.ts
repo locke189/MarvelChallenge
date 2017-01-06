@@ -5,6 +5,8 @@ import { Observable }        from 'rxjs/Observable';
 import { Subject }           from 'rxjs/Subject';
 
 import { HttpService } from '../http.service';
+import { ComicModalService } from '../comic-modal.service';
+
 import { Character } from '../character';
 
 @Component({
@@ -24,7 +26,7 @@ export class HeroListComponent implements OnInit, OnChanges {
   sortBy: string = 'Sort by  ';
   sortByValue: string = 'name';
 
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: HttpService, private comicModalService: ComicModalService) {}
 
   ngOnInit() {
       console.log('onInit');
@@ -107,7 +109,9 @@ export class HeroListComponent implements OnInit, OnChanges {
     this.ngOnChanges();
   }
 
-
+ onClick(url:string){
+  this.comicModalService.sendUrl(url);
+ }
 
 
 
