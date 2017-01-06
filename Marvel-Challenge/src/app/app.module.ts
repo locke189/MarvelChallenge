@@ -13,6 +13,9 @@ import { CharacterComponent } from './hero-list/character/character.component';
 import { ComicComponent } from './fav-list/comic/comic.component';
 import { HeroDetailComponent } from './hero-list/hero-detail/hero-detail.component';
 
+import { ComicModalService } from './comic-modal.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +33,7 @@ import { HeroDetailComponent } from './hero-list/hero-detail/hero-detail.compone
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ComicModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
