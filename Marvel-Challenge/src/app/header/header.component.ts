@@ -18,10 +18,12 @@ export class HeaderComponent implements OnInit {
   search(term:string){
     this.searchTerm.emit(term);
     console.log(`Search: ${term}`);
+
   }
 
   viewInMain(component:string){
     this.mainContent.emit(component);
+    document.getElementById("navbar-toggle-button").click();
   }
 
 
