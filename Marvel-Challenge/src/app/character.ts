@@ -16,7 +16,7 @@ export class Character {
   }
 
 
-  private getRandomComicList(size: number = 4){
+  getRandomComicList(size: number = 4){
     let list = [];
     if (this.allComics.length){
       for(let i = 0; i < size ; i++ ){
