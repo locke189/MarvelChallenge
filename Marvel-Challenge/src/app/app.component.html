@@ -1,11 +1,11 @@
-<app-header (searchTerm)="onSearch($event)">...Loading</app-header>
+<app-header (searchTerm)="onSearch($event)" (mainContent)="setContentClass($event)">...Loading</app-header>
 <div class="container main">
   <div class="row">
-    <div class="col-xs-12 col-sm-9 left-column">
-      <app-hero-list [keyword]="keyword"></app-hero-list>
+    <div class="col-xs-12 col-sm-9 left-column" [ngClass]="setHeroListClasses()">
+      <app-hero-list [keyword]="keyword" ></app-hero-list>
     </div>
-    <div class="col-sm-3 hidden-xs right-column" >
-      <app-fav-list></app-fav-list>
+    <div class="col-sm-3 hidden-xs right-column" [ngClass]="setFavListClasses()">
+      <app-fav-list ></app-fav-list>
     </div>
   </div>
 </div>

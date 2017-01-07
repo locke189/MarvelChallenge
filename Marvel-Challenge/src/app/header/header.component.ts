@@ -8,6 +8,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   @Output() searchTerm = new EventEmitter();
+  @Output() mainContent = new EventEmitter();
 
   constructor() { }
 
@@ -18,4 +19,12 @@ export class HeaderComponent implements OnInit {
     this.searchTerm.emit(term);
     console.log(`Search: ${term}`);
   }
+
+  viewInMain(component:string){
+    this.mainContent.emit(component);
+  }
+
+
+
+
 }

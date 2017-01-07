@@ -2,6 +2,11 @@
     border-radius: 0px;
     margin-bottom: 0px;
 }
+
+.input-wrapper{
+  display: inline;
+}
+
 .navbar-brand {
   padding: 0px;
 }
@@ -12,6 +17,7 @@
 }
 
 .search-container{
+  display: table;
   margin:auto;
   width: 60%;
 }
