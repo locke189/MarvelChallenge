@@ -26,6 +26,17 @@ export class ComicDetailComponent implements OnInit {
       err => {
         console.log(err);
       });
+
+        this.comicModalService.comic$.subscribe(
+      comic  => {
+        console.log(`new comic! ${comic.title}`)
+        this.comic = comic;
+        this.openModal();
+      },
+      err => {
+        console.log(err);
+      });
+
   }
 
   ngOnInit() {

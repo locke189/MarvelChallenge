@@ -1,9 +1,22 @@
 .img-resize{
-  width:200px; /* you can use % */
+  width: 200px;
   height: auto;
+}
+
+.comic-wrapper{
+  position: relative;
+  margin: auto;
+  width:200px;
 }
 
 .center-div{
   text-align:center;
+}
+
+.comic-erase{
+  position: absolute;
+  top: -20px;
+  right: -20px;
+
 }
 
