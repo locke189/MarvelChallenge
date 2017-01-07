@@ -6,7 +6,7 @@ import { Subject } from 'rxjs/Subject';
 export class ModelService {
 
   favouriteComics : Comic[] = [];
-  private favListSource = new Subject<any[]>();
+  private favListSource = new Subject<Comic[]>();
   favList$ = this.favListSource.asObservable();
 
   constructor() { }
