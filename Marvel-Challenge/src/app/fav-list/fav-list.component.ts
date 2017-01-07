@@ -12,6 +12,8 @@ export class FavListComponent implements OnInit {
   favouriteComics: Comic[];
 
   constructor(private modelService: ModelService) {
+    this.favouriteComics = this.modelService.getFavourites();
+
     this.modelService.favList$.subscribe(
       (favList) => {
         console.log("fav list updated!")

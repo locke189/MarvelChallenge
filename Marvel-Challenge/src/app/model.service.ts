@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Comic } from './comic'
+import { Storage } from './storage';
 import { Subject } from 'rxjs/Subject';
 
 @Injectable()
@@ -9,14 +10,25 @@ export class ModelService {
   private favListSource = new Subject<Comic[]>();
   favList$ = this.favListSource.asObservable();
 
-  constructor() { }
+  storage: Storage = new Storage("marvelChallengeLocalStorage");
+
+  constructor() {
+    const data = this.storage.getFromStorage();
+    if(data){
+      console.log('data loaded from storage');
+      this.favouriteComics = data;
+      this.favListSource.next(this.favouriteComics);
+    }
+  }
 
   addComic(comic:Comic){
     const existingComic = this.checkComicInListbyId(comic.id);
     if(!existingComic){
       console.log(`comic added to fav list! ${comic.title}`)
       this.favouriteComics.push(comic);
+      this.storage.saveToStorage(this.favouriteComics);
       this.favListSource.next(this.favouriteComics);
+
       return true;
     }
     return false
@@ -35,6 +47,7 @@ export class ModelService {
     const index = this.favouriteComics.indexOf(comic);
     if(index != -1) {
       this.favouriteComics.splice(index, 1);
+      this.storage.saveToStorage(this.favouriteComics);
       this.favListSource.next(this.favouriteComics);
       return true;
     }
