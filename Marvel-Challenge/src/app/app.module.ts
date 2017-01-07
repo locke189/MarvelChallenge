@@ -14,7 +14,7 @@ import { ComicComponent } from './fav-list/comic/comic.component';
 import { HeroDetailComponent } from './hero-list/hero-detail/hero-detail.component';
 
 import { ComicModalService } from './comic-modal.service';
-
+import { ModelService } from './model.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { ComicModalService } from './comic-modal.service';
     FormsModule,
     HttpModule
   ],
-  providers: [ComicModalService],
+  providers: [ComicModalService, ModelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

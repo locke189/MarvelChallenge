@@ -1,17 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Comic } from './comic'
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class ModelService {
 
-  favouriteComics : Comic[];
+  favouriteComics : Comic[] = [];
+  private favListSource = new Subject<any[]>();
+  favList$ = this.favListSource.asObservable();
 
   constructor() { }
 
   addComic(comic:Comic){
     const existingComic = this.checkComicInListbyId(comic.id);
     if(!existingComic){
+      console.log(`comic added to fav list! ${comic.title}`)
       this.favouriteComics.push(comic);
+      this.favListSource.next(this.favouriteComics);
       return true;
     }
     return false
@@ -30,6 +35,7 @@ export class ModelService {
     const index = this.favouriteComics.indexOf(comic);
     if(index != -1) {
       this.favouriteComics.splice(index, 1);
+      this.favListSource.next(this.favouriteComics);
       return true;
     }
     return false;

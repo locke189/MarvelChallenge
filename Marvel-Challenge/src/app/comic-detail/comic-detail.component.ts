@@ -11,7 +11,7 @@ import { Subject }           from 'rxjs/Subject';
   selector: 'app-comic-detail',
   templateUrl: './comic-detail.component.html',
   styleUrls: ['./comic-detail.component.css'],
-  providers: [ModelService, HttpService]
+  providers: [HttpService]
 })
 export class ComicDetailComponent implements OnInit {
   @Input() comic: Comic;
@@ -48,6 +48,10 @@ export class ComicDetailComponent implements OnInit {
   openModal(){
     console.log('opening modal');
     document.getElementById("openModalButton").click();
+  }
+
+  addToFavs(){
+    this.modelService.addComic(this.comic);
   }
 
 }

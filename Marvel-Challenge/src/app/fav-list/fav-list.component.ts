@@ -6,15 +6,22 @@ import { ModelService } from '../model.service';
   selector: 'app-fav-list',
   templateUrl: './fav-list.component.html',
   styleUrls: ['./fav-list.component.css'],
-  providers: [ModelService]
+  providers: []
 })
 export class FavListComponent implements OnInit {
   favouriteComics: Comic[];
 
-  constructor(private modelService: ModelService) { }
+  constructor(private modelService: ModelService) {
+    this.modelService.favList$.subscribe(
+      (favList) => {
+        console.log("fav list updated!")
+        this.favouriteComics = favList;
+      }
+    );
+  }
 
   ngOnInit() {
-    this.favouriteComics = this.modelService.getFavourites();
+
   }
 
 }
