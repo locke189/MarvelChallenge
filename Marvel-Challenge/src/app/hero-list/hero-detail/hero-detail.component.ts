@@ -25,6 +25,7 @@ export class HeroDetailComponent implements OnInit {
   }
 
   callModal(url:string){
+    document.getElementById('modal-button-close').click();
     this.comicModalService.sendUrl(url);
   }
 
