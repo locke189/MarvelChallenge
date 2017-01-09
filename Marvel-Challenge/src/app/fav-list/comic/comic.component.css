@@ -1,12 +1,15 @@
-.img-resize{
-  width: 200px;
+.comic-image{
+  width: 100%;
   height: auto;
+  margin: 0px;
 }
 
 .comic-wrapper{
+  width: 80%;
   position: relative;
   margin: auto;
-  width:200px;
+  margin-bottom: 40px;
+
 }
 
 .center-div{
