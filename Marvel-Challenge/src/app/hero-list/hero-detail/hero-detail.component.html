@@ -9,17 +9,17 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-xs-4 image-wrapper">
+          <div class="col-xs-12 col-md-4  image-wrapper text-center">
             <img class="comic-img" src="{{char.thumbnail}}">
           </div>
-          <div class="col-xs-8 comic-wrapper">
+          <div class="col-xs-12 col-md-8 comic-wrapper">
             <h1 class="comic-title h2" >{{char.name | uppercase}}</h1>
             <p  class="comic-description" >{{char.description}}</p>
           </div>
         </div>
         <ul class="related-comics pre-scrollable" >
           <li *ngFor="let comic of char.allComics">
-            <div class="related-comic"><a href="#" (click)="callModal(comic.resourceURI)" class="char-comics">{{comic.name}}</a> </div>
+            <div class="related-comic"><a href="#" (click)="closebtn.click(); callModal(comic.resourceURI)" class="char-comics">{{comic.name}}</a> </div>
           </li>
         </ul>
 

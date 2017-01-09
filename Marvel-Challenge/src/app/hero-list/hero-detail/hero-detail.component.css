@@ -7,7 +7,7 @@
 .comic-img{
   width: 100%;
   height: auto;
-  padding-left: 15px;
+  margin: 0 auto;
 }
 
 .top-button-wrapper{
@@ -38,4 +38,14 @@
   margin-bottom: 0.6rem;
   overflow: hidden;
   -webkit-box-orient: vertical;
+}
+
+
+
+@media (max-width: 991px) {
+  .comic-img{
+    width: 30vw;
+    height: auto;
+    margin: 0 auto;
+  }
 }
