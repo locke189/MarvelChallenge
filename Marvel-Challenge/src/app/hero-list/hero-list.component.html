@@ -1,22 +1,25 @@
-<div class="row char-list-header">
-  <div class="col-xs-9">
-      <h2 class="align-middle float-left">
-              <i class="characters icon align-bottom"></i>
-              Characters
-    </h2>
-  </div>
-  <div class="col-xs-3">
-    <div class="btn-group pull-right">
-      <button type="button" class="btn btn-default dropdown-toggle sort-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {{sortBy}} <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a href="#" (click)="orderBy('modified')">Modified</a></li>
-        <li><a href="#" (click)="orderBy('name')">Name</a></li>
-      </ul>
+
+    <div class="row char-list-header">
+      <div class="col-xs-9">
+        <h2 class="align-middle float-left char-text">
+          <i class="characters icon align-bottom"></i>
+          Characters
+        </h2>
+      </div>
+
+      <div class="col-xs-3">
+        <div class="btn-group  pull-right">
+          <button type="button" class="btn btn-default dropdown-toggle sort-dropdown col-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{sortBy}} <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#" (click)="orderBy('modified')">Modified</a></li>
+            <li><a href="#" (click)="orderBy('name')">Name</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+
 
 <div class="row char-list-bodychar">
   <app-character *ngFor="let character of characters" [char]="character" ></app-character>

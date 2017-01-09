@@ -3,6 +3,17 @@
   margin-bottom: 20px;
 }
 
+.col-right{
+  height: 40px;
+  margin-top:20px;
+  width:20vw;
+  text-transform: none;
+  text-align: left;
+}
+
+.btn{
+  border: 1px solid #DCDCDC;
+}
 .sort-dropdown{
   float: right;
 }
@@ -11,6 +22,7 @@
     padding: 0px;
     width: 100%;
 }
+
 
 
 .char-list-footer ul {
@@ -30,4 +42,23 @@
   height: 40px;
   vertical-align: middle;
   width: 40px;
+}
+
+.char-text{
+  font-size:30px;
+}
+
+@media (max-width: 500px) {
+  .char-text{
+    font-size: 20px;
+  }
+
+  .col-right{
+    height: 40px;
+    margin-top:20px;
+    width: 30vw;
+    text-transform: none;
+    text-align: left;
+  }
+
 }
