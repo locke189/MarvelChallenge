@@ -1,0 +1,41 @@
+.btn-close-modal{
+  background: url("assets/icons/btn-close.png") no-repeat;
+  padding: 5px;
+}
+
+
+.comic-img{
+  width: 100%;
+  height: auto;
+  padding-left: 15px;
+}
+
+.top-button-wrapper{
+  height: auto;
+  margin-bottom: 5px;
+  padding: 5px 20px 0px;
+}
+
+.image-wrapper{
+  margin-bottom: 15px;
+
+}
+
+.comic-wrapper{
+  padding-right: 60px;
+}
+
+
+.comic-title{
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.comic-description{
+  display: -webkit-box;
+  font-size: 1em;
+  font-weight: 300;
+  margin-bottom: 0.6rem;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}

@@ -10,6 +10,7 @@ body{
 
 /* Overrides */
 
+/* Buttons */
 .btn {
   border-radius: 0;
   border: none;
@@ -26,4 +27,20 @@ body{
   background: #fff;
   border: 1px solid #ec1e23;
   color: #ec1e23;
+}
+
+
+/* Modals */
+
+.modal-dialog{
+  height: auto;
+}
+
+.modal-content{
+  height:100%;
+  border-radius: 0px;
+}
+
+.modal-body{
+  height:auto;
 }

@@ -1,15 +1,23 @@
 
 <div class="modal fade" [id]="char.id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">{{char.name | uppercase}}</h4>
-      </div>
-      <div class="modal-body pre-scrollable">
-        <p>{{char.description}}</p>
-        <h1 class="h5"> Related Comics</h1>
-        <ul class="related-comics" >
+      <div class="modal-body ">
+        <div class="row">
+          <div class="col-xs-12 top-button-wrapper">
+            <a href="#" (click)="closebtn.click()" class="pull-right" ><img  src="assets/icons/btn-close.png"></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4 image-wrapper">
+            <img class="comic-img" src="{{char.thumbnail}}">
+          </div>
+          <div class="col-xs-8 comic-wrapper">
+            <h1 class="comic-title h2" >{{char.name | uppercase}}</h1>
+            <p  class="comic-description" >{{char.description}}</p>
+          </div>
+        </div>
+        <ul class="related-comics pre-scrollable" >
           <li *ngFor="let comic of char.allComics">
             <div class="related-comic"><a href="#" (click)="callModal(comic.resourceURI)" class="char-comics">{{comic.name}}</a> </div>
           </li>
@@ -17,7 +25,7 @@
 
       </div>
       <div class="modal-footer">
-        <button id="modal-button-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button #closebtn id="modal-button-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" (click)="addRandomComics()" class="btn btn-primary">Add Random Comics</button>
       </div>
     </div>
