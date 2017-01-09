@@ -1,11 +1,11 @@
-.app-wrapper{
+.app-body-wrapper{
   max-height: 100vw;
   overflow: hidden;
 }
 
 .left-column{
   background: rgb(244,244,244);
-  max-height: 100vw
+  max-height: 100vw;
 }
 .right-column{
   background: rgb(235,235,235);
@@ -22,6 +22,26 @@ body{
 }
 
 .main{
-  height: 100vw;
+  height: 100%;
+  width:  100%;
+}
+
+.app-wrapper{
   width:100%;
+}
+
+@media (max-width: 767px) {
+  .app-body-wrapper{
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+.left-column{
+  background: rgb(244,244,244);
+  max-height: 100%;
+}
+.right-column{
+  background: rgb(235,235,235);
+  max-height: 100%;
+}
 }
