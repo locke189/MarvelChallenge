@@ -1,15 +1,15 @@
 .app-wrapper{
-  max-height: 90vw;
+  max-height: 100vw;
   overflow: hidden;
 }
 
 .left-column{
   background: rgb(244,244,244);
-  max-height: 90vw
+  max-height: 100vw
 }
 .right-column{
   background: rgb(235,235,235);
-  max-height: 90vw;
+  max-height: 100vw;
 }
 
 .row{
@@ -22,5 +22,6 @@ body{
 }
 
 .main{
-  width: 100%;
+  height: 100vw;
+  width:100%;
 }
