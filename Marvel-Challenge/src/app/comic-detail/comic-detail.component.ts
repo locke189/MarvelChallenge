@@ -22,6 +22,7 @@ export class ComicDetailComponent implements OnInit {
       url  => {
         console.log(`new url! ${url}`)
         this.getComicByUrl(url);
+        console.log(this.comic);
         this.openModal();
       },
       err => {
