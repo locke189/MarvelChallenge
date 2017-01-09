@@ -13,7 +13,12 @@
             <img class="comic-img" src="{{comic.thumbnail}}">
           </div>
           <div class="col-xs-8 comic-wrapper">
-            <h1 class="comic-title h2" >{{comic.title}}</h1>
+            <h1 class="comic-title comic-title-size" >{{comic.title}}</h1>
+          </div>
+          <div class="col-xs-8 hidden-xxs comic-wrapper">
+            <p  class="comic-description" >{{comic.description}}</p>
+          </div>
+          <div class="col-xs-12 show-xxs comic-wrapper">
             <p  class="comic-description" >{{comic.description}}</p>
           </div>
         </div>
@@ -21,21 +26,21 @@
 
       <div class="row footer-wrapper">
         <div class="col-xs-6 comic-no-favourite" [ngClass]="setAddToFavouriteClasses()" (click)="addToFavs()">
-          <h4 class="text-center float-left btn-text-add-to-favs">
-            <i class="add-to-favourites icon align-bottom"></i>
-              Add to Favourites
+          <h4 class="text-center float-left btn-text-add-to-favs responsive-h4">
+            <i class="add-to-favourites icon align-bottom "></i>
+            <span class="hidden-xxs">Add to Favourites</span>
           </h4>
         </div>
         <div class="col-xs-6 hidden comic-favourite" [ngClass]="setFavouriteClasses()" (click)="removeFromFavs()" >
-          <h4 class="text-center float-left btn-text-default">
+          <h4 class="text-center float-left btn-text-default responsive-h4">
             <i class="added-favourites icon align-bottom"></i>
-              Added to Favourites
+            <span class="hidden-xxs">Added to Favourites</span>
           </h4>
         </div>
         <div class="col-xs-6 comic-shop">
-          <h4 class="text-center float-left btn-text-default">
+          <h4 class="text-center float-left btn-text-default responsive-h4">
             <i class="comic-buy icon align-bottom"></i>
-              Buy for {{comic.price}}
+            <span class="hidden-xxs">Buy for {{comic.price}}</span>
           </h4>
         </div>
       </div>

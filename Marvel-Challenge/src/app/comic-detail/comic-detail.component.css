@@ -1,4 +1,6 @@
-
+.modal-content{
+  top: 10vh;
+}
 .comic-img{
   width: 100%;
   height: auto;
@@ -88,11 +90,44 @@
   color: #3D3332;
   text-transform: uppercase;
 }
+.comic-title-size{
+  font-size:30px;
+}
 
+@media (max-width: 600px) {
+  .responsive-h4{
+    font-size: 14px;
+  }
+  .comic-title-size{
+    font-size:24px;
+  }
+}
 
+@media (max-width: 492px) {
+  .comic-title-size{
+    font-size:20px;
+  }
+  .hidden-xxs{
+    display: none;
+  }
+  .image-wrapper{
+    margin-bottom: 0px;
+  }
 
+  .comic-wrapper{
+    margin-bottom: 15px;
+  }
+  .comic-img{
+    padding: 0px;
+  }
+}
 
+@media (min-width: 493px) {
+  .show-xxs{
+    display: none;
+  }
 
+}
 
 
 
