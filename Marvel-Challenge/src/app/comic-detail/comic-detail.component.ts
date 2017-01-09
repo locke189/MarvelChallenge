@@ -15,6 +15,7 @@ import { Subject }           from 'rxjs/Subject';
 })
 export class ComicDetailComponent implements OnInit {
   @Input() comic: Comic;
+  isFavourite: boolean = false;
 
   constructor(private modelService: ModelService, private httpService: HttpService, private comicModalService: ComicModalService) {
         this.comicModalService.comicUrl$.subscribe(
@@ -31,6 +32,7 @@ export class ComicDetailComponent implements OnInit {
       comic  => {
         console.log(`new comic! ${comic.title}`)
         this.comic = comic;
+        this.checkIfFavourite();
         this.openModal();
       },
       err => {
@@ -52,6 +54,7 @@ export class ComicDetailComponent implements OnInit {
           return comic;
         });
         this.comic = comics[0];
+        this.checkIfFavourite();
         console.log(this.comic.title);
     });
   }
@@ -63,6 +66,34 @@ export class ComicDetailComponent implements OnInit {
 
   addToFavs(){
     this.modelService.addComic(this.comic);
+    this.checkIfFavourite();
   }
 
+  removeFromFavs(){
+    this.modelService.eraseComicFromListbyId(this.comic.id);
+    this.checkIfFavourite();
+  }
+
+  checkIfFavourite(){
+        const existingComic = this.modelService.checkComicInListbyId(this.comic.id);
+        if(existingComic){
+          this.isFavourite = true;
+        } else {
+          this.isFavourite = false;
+        }
+  }
+
+  setFavouriteClasses(){
+    const classes =  {
+      "hidden": !this.isFavourite,
+    };
+    return classes;
+  }
+
+  setAddToFavouriteClasses(){
+    const classes =  {
+      "hidden": this.isFavourite,
+    };
+    return classes;
+  }
 }

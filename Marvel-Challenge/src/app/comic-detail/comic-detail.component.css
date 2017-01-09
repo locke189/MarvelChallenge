@@ -1,0 +1,118 @@
+.modal-dialog{
+  height: auto;
+}
+
+.modal-content{
+  height:100%;
+  border-radius: 0px;
+}
+
+.modal-body{
+  height:auto;
+}
+
+
+.comic-img{
+  width: 100%;
+  height: auto;
+  padding-left: 15px;
+}
+
+.top-button-wrapper{
+  height: auto;
+  margin-bottom: 5px;
+  padding: 5px 20px 0px;
+}
+
+.image-wrapper{
+  margin-bottom: 15px;
+
+}
+
+.comic-wrapper{
+  padding-right: 60px;
+}
+
+.btn-close-modal{
+  background: url("assets/icons/btn-close.png") no-repeat;
+  padding: 5px;
+}
+
+.comic-title{
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.comic-description{
+  display: -webkit-box;
+  font-size: 1em;
+  font-weight: 300;
+  margin-bottom: 0.6rem;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.footer-wrapper{
+  margin-left:0px;
+  margin-right:0px;
+  height:30px;
+}
+
+.comic-favourite{
+  background-color: #322827;
+}
+
+.comic-no-favourite{
+  background-color: #F0F0F0;
+}
+
+.comic-shop{
+  background-color: #DCDCDC;
+}
+
+.icon.add-to-favourites {
+  background: url('assets/icons/btn-favourites-default.png') no-repeat;
+}
+
+.icon.added-favourites {
+  background: url('assets/icons/btn-favourites-primary.png') no-repeat;
+}
+
+.icon.comic-buy {
+  background: url('assets/icons/shopping-cart-primary.png') no-repeat;
+}
+.icon {
+  display: inline-block;
+  height: 40px;
+  vertical-align: middle;
+  width: 40px;
+}
+
+.btn-text-default{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #ED171C;
+  text-transform: uppercase;
+}
+
+.btn-text-add-to-favs{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #3D3332;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
