@@ -1,4 +1,15 @@
 .fav-list-header{
   padding: 10px;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.icon.favourites {
+  background: url('assets/icons/favourites.png') no-repeat;
+}
+.icon {
+  display: inline-block;
+  height: 40px;
+  vertical-align: middle;
+  width: 40px;
 }

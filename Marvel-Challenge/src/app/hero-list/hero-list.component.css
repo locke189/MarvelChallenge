@@ -1,5 +1,6 @@
 .char-list-header{
   padding: 10px;
+  margin-bottom: 20px;
 }
 
 .sort-dropdown{
@@ -19,4 +20,14 @@
 
 .char-list-body{
     padding-right: 50px;
+}
+
+.icon.characters {
+  background: url('assets/icons/characters.png') no-repeat;
+}
+.icon {
+  display: inline-block;
+  height: 40px;
+  vertical-align: middle;
+  width: 40px;
 }
