@@ -1,30 +1,29 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
+<nav class="navbar navbar-fixed-top">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button id="navbar-toggle-button" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">
-        <img alt="Marvel Comic Search Engine" src="assets/Marvel-Logo.png">
-      </a>
-    </div>
+    <div class="row">
 
-    <div class="collapse navbar-collapse" id="navbar-collapse-1">
-      <form class="navbar-form">
-        <div class="form-group input-wrapper">
-          <div class="input-group search-container" >
-            <input type="text" #term class="form-control search-box" id="search" placeholder="Search" (keyup)="search(term.value)"/>
-          </div>
-        </div>
-      </form>
-      <ul class="nav navbar-nav navbar-right hidden-sm hidden-lg hidden-md">
-        <li><a href="#" (click)="viewInMain('characters')" >Characters</a></li>
-        <li><a href="#" (click)="viewInMain('favourites')">Favourites</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+      <div class="col-xs-2 col-sm-2">
+        <a class="navbar-brand" href="#">
+          <img class="" alt="Marvel Comic Search Engine" src="assets/Marvel-Logo.png">
+        </a>
+      </div>
+
+      <div class="col-xs-8 col-sm-9">
+          <form class="form-group input-wrapper">
+              <div class="input-group search-container" >
+                <input type="text" #term class="form-control search-box" id="search" placeholder="Search" (keyup)="search(term.value)"/>
+              </div>
+          </form>
+      </div>
+
+      <div class="col-xs-1 hidden-sm hidden-lg hidden-md image-wrapper pull-right">
+
+        <img alt="favourites" *ngIf="isCharacter" class="img-box pull-right" src="assets/icons/favourites.png" (click)="viewInMain('favourites')">
+        <img alt="characters" *ngIf="!isCharacter" class="img-box pull-right" src="assets/icons/characters.png" (click)="viewInMain('characters')">
+
+      </div><!-- /.navbar-collapse -->
+
+    </div><!-- /.container -->
+  </div>
 </nav>
