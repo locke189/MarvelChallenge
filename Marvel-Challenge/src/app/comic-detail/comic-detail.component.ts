@@ -102,4 +102,9 @@ export class ComicDetailComponent implements OnInit {
     };
     return classes;
   }
+
+  openUrl(){
+    window.open(this.comic.purchaseUrl, "_blank");
+  }
+
 }
