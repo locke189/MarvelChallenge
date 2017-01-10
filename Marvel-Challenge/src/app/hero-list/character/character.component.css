@@ -1,7 +1,6 @@
 /* Char Container */
 
-
-.char-panel > .row > .img-container > img{
+.char-panel > .row > .img-wrapper > img{
   border-radius: 50%;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.7);
   display: inline-block;
@@ -14,8 +13,12 @@
 }
 
 .char-panel{
+  margin-left:auto;
+  margin-right:auto;
   margin-bottom: 2em;
   background-color: #fff;
+  width: 90%;
+  height: 33vh;
 }
 
 /* Char bio */
@@ -47,9 +50,14 @@
   margin-right: 4%;
 }
 
+.text-wrapper{
+  width:22em;
+}
 
-.img-container{
+.img-wrapper{
   padding-top: 2em;
+  width:11em;
+  height:12em;
 }
 
 .comics-container{
@@ -132,5 +140,40 @@ ul{
   text-decoration: none;
 }
 
+@media (max-width: 991px) {
+  .char-panel{
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: 2em;
+    background-color: #fff;
+    width: 90%;
+    height: 11em;
+  }
+}
 
+@media (max-width: 450px) {
+.char-panel > .row > .img-wrapper > img{
+  border-radius: 50%;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.7);
+  display: inline-block;
+  height: 8em;
+  left: -0.5em;
+  position: relative;
+  top: -2.5em;
+  width: 8em;
+}
+.img-wrapper{
+  padding-top: 2em;
+  width:8em;
+  height:8em;
+}
+  .char-panel{
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: 2em;
+    background-color: #fff;
+    width: 90%;
+    height: 13em;
+  }
+}
 
