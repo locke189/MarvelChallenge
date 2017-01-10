@@ -6,6 +6,7 @@ export class Comic {
   prices: any[];
   urls: any[];
   price: string;
+  purchaseUrl: string;
 
   constructor(object:any){
     this.id = object.id;
@@ -17,6 +18,12 @@ export class Comic {
     this.price='not available';
     console.log(this.price);
     this.setComicPrice();
+    this.setComicUrl();
+
+    if(!this.description){
+      this.description = "Description not available"
+    }
+
   }
 
   private setComicPrice(){
@@ -25,4 +32,12 @@ export class Comic {
     });
   }
 
+  private setComicUrl(){
+    this.urls.forEach((listElement) => {
+      this.purchaseUrl = listElement.url;
+      if(listElement.type === "purchase"){
+        return;
+      }
+    });
+  }
 }

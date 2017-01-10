@@ -13,6 +13,10 @@ export class Character {
     this.description = object.description;
     this.allComics = object.comics.items;
     this.comicList = this.getRandomComicList(4);
+
+    if(this.description === ""){
+      this.description = "Description not available"
+    }
   }
 
 
