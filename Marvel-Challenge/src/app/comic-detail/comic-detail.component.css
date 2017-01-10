@@ -1,5 +1,6 @@
 .modal-content{
   top: 10vh;
+  max-height: 90vh;
 }
 .comic-img{
   width: 100%;
@@ -28,16 +29,19 @@
 }
 
 .comic-title{
+  max-height: 20vh;
   margin-top: 0;
   text-transform: uppercase;
+  overflow: hidden;
 }
 
 .comic-description{
+  max-height: 30vh;
   display: -webkit-box;
   font-size: 1em;
   font-weight: 300;
   margin-bottom: 0.6rem;
-  overflow: hidden;
+  overflow: scroll;
   -webkit-box-orient: vertical;
 }
 

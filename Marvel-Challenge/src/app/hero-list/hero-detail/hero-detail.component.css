@@ -22,6 +22,8 @@
 }
 
 .comic-wrapper{
+  max-height:20vh;
+  overflow: scroll;
   padding-right: 60px;
 }
 
@@ -40,7 +42,10 @@
   -webkit-box-orient: vertical;
 }
 
-
+.related-comics{
+  max-height:30vh;
+  overflow: scroll;
+}
 
 @media (max-width: 991px) {
   .comic-img{
@@ -48,4 +53,17 @@
     height: auto;
     margin: 0 auto;
   }
+}
+
+@media (max-width: 600px) {
+  .comic-title{
+    font-size:24px;
+  }
+}
+
+@media (max-width: 492px) {
+  .comic-title{
+    font-size:20px;
+  }
+
 }

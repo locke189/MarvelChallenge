@@ -43,8 +43,6 @@ export class HeroListComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-
-
    }
 
 
