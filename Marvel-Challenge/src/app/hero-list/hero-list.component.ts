@@ -27,9 +27,7 @@ export class HeroListComponent implements OnInit, OnChanges {
   sortBy: string = 'Sort by  ';
   sortByValue: string = 'name';
 
-  constructor(private httpService: HttpService, private comicModalService: ComicModalService) {}
-
-  ngOnInit() {
+  constructor(private httpService: HttpService, private comicModalService: ComicModalService) {
       console.log('onInit');
       this.httpService.getData( this.keyword , this.sortByValue, (10*(this.page-1)) ).subscribe(
         ( data: Response ) => {
@@ -41,7 +39,13 @@ export class HeroListComponent implements OnInit, OnChanges {
           });
         }
       );
+
   }
+
+  ngOnInit() {
+
+
+   }
 
 
   ngOnChanges(){
@@ -58,6 +62,7 @@ export class HeroListComponent implements OnInit, OnChanges {
           });
         }
       );
+
   }
 
   setPages(total){
@@ -116,7 +121,5 @@ export class HeroListComponent implements OnInit, OnChanges {
  onClick(url:string){
   this.comicModalService.sendUrl(url);
  }
-
-
 
 }
