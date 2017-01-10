@@ -2,7 +2,7 @@
 <div class="modal fade" [id]="'ComicModal'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content" *ngIf="comic">
-      <div class="modal-body">
+      <div class="modal-body" *ngIf="!loading">
         <div class="row">
           <div class="col-xs-12 top-button-wrapper">
             <a href="#" (click)="closebtn.click()" class="pull-right" ><img  src="assets/icons/btn-close.png"></a>
@@ -24,7 +24,7 @@
         </div>
       </div>
 
-      <div class="row footer-wrapper">
+      <div class="row footer-wrapper" *ngIf="!loading">
         <div class="col-xs-6 comic-no-favourite" [ngClass]="setAddToFavouriteClasses()" (click)="addToFavs()">
           <h4 class="text-center float-left btn-text-add-to-favs responsive-h4">
             <i class="add-to-favourites icon align-bottom "></i>
@@ -44,6 +44,11 @@
           </h4>
         </div>
       </div>
+
+      <div class="modal-body" *ngIf="loading">
+        <div class="loading"></div>
+      </div>
+
     </div>
   </div>
 </div>

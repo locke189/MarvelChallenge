@@ -16,10 +16,12 @@ import { Subject }           from 'rxjs/Subject';
 export class ComicDetailComponent implements OnInit {
   @Input() comic: Comic;
   isFavourite: boolean = false;
+  loading: boolean = true;
 
   constructor(private modelService: ModelService, private httpService: HttpService, private comicModalService: ComicModalService) {
         this.comicModalService.comicUrl$.subscribe(
       url  => {
+        this.loading = false;
         console.log(`new url! ${url}`)
         this.getComicByUrl(url);
         console.log(this.comic);
@@ -32,6 +34,7 @@ export class ComicDetailComponent implements OnInit {
         this.comicModalService.comic$.subscribe(
       comic  => {
         console.log(`new comic! ${comic.title}`)
+        this.loading = false;
         this.comic = comic;
         this.checkIfFavourite();
         this.openModal();
@@ -47,9 +50,11 @@ export class ComicDetailComponent implements OnInit {
   }
 
   getComicByUrl(url:string){
+    this.loading = true;
     console.log('Comic Request');
     this.httpService.getComicDataFromUrl(url).subscribe(
       ( data: Response ) => {
+        this.loading = false;
         const comics = data.json().data.results.map( (object) => {
           const comic: Comic = new Comic(object);
           return comic;
