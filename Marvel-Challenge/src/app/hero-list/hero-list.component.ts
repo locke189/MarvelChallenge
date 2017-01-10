@@ -18,6 +18,7 @@ import { Character } from '../character';
 export class HeroListComponent implements OnInit, OnChanges {
 
   @Input() keyword: string;
+  loading: boolean = true;
 
   characters: Character[];
   page: number = 1;
@@ -32,6 +33,7 @@ export class HeroListComponent implements OnInit, OnChanges {
       console.log('onInit');
       this.httpService.getData( this.keyword , this.sortByValue, (10*(this.page-1)) ).subscribe(
         ( data: Response ) => {
+          this.loading = false;
           this.setPages(data.json().data.total);
           this.characters = data.json().data.results.map( (object) => {
             const char: Character = new Character(object);
@@ -44,9 +46,11 @@ export class HeroListComponent implements OnInit, OnChanges {
 
   ngOnChanges(){
       console.log('HTTP Request...');
+      this.loading = true;
       this.page = 1;
       this.httpService.getData( this.keyword, this.sortByValue, (10*(this.page-1)) ).subscribe(
         ( data: Response ) => {
+          this.loading = false;
           this.setPages(data.json().data.total);
           this.characters = data.json().data.results.map( (object) => {
             const char: Character = new Character(object);
