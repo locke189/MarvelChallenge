@@ -49,14 +49,20 @@
 
 .comic-favourite{
   background-color: #322827;
+  cursor: hand;
+  cursor: pointer;
 }
 
 .comic-no-favourite{
   background-color: #F0F0F0;
+  cursor: hand;
+  cursor: pointer;
 }
 
 .comic-shop{
   background-color: #DCDCDC;
+  cursor: hand;
+  cursor: pointer;
 }
 
 .icon.add-to-favourites {
