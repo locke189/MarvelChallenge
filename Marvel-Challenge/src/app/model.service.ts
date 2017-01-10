@@ -25,7 +25,7 @@ export class ModelService {
     const existingComic = this.checkComicInListbyId(comic.id);
     if(!existingComic){
       console.log(`comic added to fav list! ${comic.title}`)
-      this.favouriteComics.push(comic);
+      this.favouriteComics.unshift(comic);
       this.storage.saveToStorage(this.favouriteComics);
       this.favListSource.next(this.favouriteComics);
 
